@@ -50,3 +50,24 @@ export const deleteOnePlayer = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const saveValue = (value) => async (dispatch) => {
+
+    dispatch({
+      type: ActionTypes.SAVE_VALUE,
+      payload: value,
+    });
+};
+
+export const searchPlayer = (text) => async (dispatch) => {
+  try {
+    // await getAllPlayers()
+    const inputValue = text
+    dispatch({
+      type: ActionTypes.FILTER_PLAYERS,
+      payload: inputValue.toLowerCase()
+    })
+  } catch (error) {
+
+  }
+}
